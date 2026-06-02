@@ -1,377 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SolarFerm — Fermentation-grade sugar from carbon dioxide</title>
-<meta name="description" content="SolarFerm converts CO₂ and energy into fermentation-grade sugar at industrial scale — decoupled from land, crops, and weather. Carbon to sugar.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Familjen+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solarferm — Fuel for the bioeconomy | Fermentation-grade sugar from CO₂</title>
+<meta name="description" content="Solarferm makes fermentation-grade sugar from carbon dioxide, hydrogen, and existing energy infrastructure — abundant, predictable feedstock for biomanufacturing, decoupled from agriculture, land, weather, and harvest." />
+<meta name="keywords" content="fermentation feedstock, industrial sugar, biomanufacturing, carbon to sugar, CO2 utilisation, sustainable feedstock, programmable sugars, bioeconomy, synthetic biology feedstock, precision fermentation sugar" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="Solarferm" />
+<link rel="canonical" href="https://solarferm.com/" />
+
+<!-- Open Graph (LinkedIn, Facebook, etc.) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Solarferm" />
+<meta property="og:title" content="Solarferm — Fuel for the bioeconomy" />
+<meta property="og:description" content="Fermentation-grade sugar from carbon dioxide and energy. Abundant, predictable feedstock to power biomanufacturing at scale — decoupled from agriculture." />
+<meta property="og:url" content="https://solarferm.com/" />
+<meta property="og:image" content="https://solarferm.com/og-image.png" />
+<meta property="og:image:alt" content="Solarferm — fermentation-grade sugar from carbon, not crops" />
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Solarferm — Fuel for the bioeconomy" />
+<meta name="twitter:description" content="Fermentation-grade sugar from carbon dioxide and energy. Abundant feedstock to power biomanufacturing at scale." />
+<meta name="twitter:image" content="https://solarferm.com/og-image.png" />
+
+<!-- Structured data: Organization (anchors entity recognition for AI / answer engines) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Solarferm",
+  "url": "https://solarferm.com/",
+  "logo": "https://solarferm.com/logo.png",
+  "description": "Solarferm produces fermentation-grade sugar from carbon dioxide, hydrogen, and energy — an abundant, predictable, agriculture-independent feedstock for biomanufacturing at industrial scale.",
+  "slogan": "Fuel for the bioeconomy",
+  "sameAs": [
+    "https://www.linkedin.com/company/solarferm"
+  ],
+  "foundingLocation": {
+    "@type": "Place",
+    "address": { "@type": "PostalAddress", "addressCountry": "NZ" }
+  },
+  "knowsAbout": [
+    "Fermentation-grade sugar",
+    "Carbon dioxide utilisation",
+    "Biomanufacturing feedstock",
+    "Programmable sugars",
+    "Sustainable industrial feedstock",
+    "Bioeconomy"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Solarferm",
+  "url": "https://solarferm.com/",
+  "description": "Fermentation-grade sugar from carbon dioxide and energy — abundant feedstock to power biomanufacturing at scale."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --black:#0c0b09;
-    --panel:#141310;
-    --panel-2:#1c1a15;
-    --cream:#f5f1e6;
-    --cream-dim:rgba(245,241,230,.60);
-    --cream-faint:rgba(245,241,230,.38);
-    --yellow:#ffd21e;
-    --yellow-2:#ffc400;
-    --green:#7fce6c;
-    --blue:#5fb0e8;
-    --line:rgba(245,241,230,.10);
-    --line-2:rgba(245,241,230,.18);
-    --maxw:1180px;
+  :root {
+    --black: #191917;
+    --black-deep: #0f0f0e;
+    --panel: #201f1c;
+    --panel-2: #262521;
+    --line: rgba(245, 241, 230, 0.10);
+    --line-strong: rgba(245, 241, 230, 0.18);
+    --text: #f5f1e6;
+    --text-dim: rgba(245, 241, 230, 0.55);
+    --text-faint: rgba(245, 241, 230, 0.38);
+    --yellow: #e7e61b;
+    --yellow-soft: rgba(231, 230, 27, 0.12);
+    --yellow-line: rgba(231, 230, 27, 0.32);
+    --green: #80f000;
+    --aqua: #20f0b0;
+    --sky: #20a0f0;
+    --cyan: #00e0f0;
+    --deep-blue: #1000e0;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--black);color:var(--cream);
-    font-family:"Familjen Grotesk",sans-serif;font-size:17px;line-height:1.62;font-weight:400;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black-deep);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  ::selection{background:var(--yellow);color:var(--black)}
-  ::-webkit-scrollbar{width:11px}
-  ::-webkit-scrollbar-track{background:var(--black)}
-  ::-webkit-scrollbar-thumb{background:var(--panel-2);border-radius:8px;border:3px solid var(--black)}
-  a{color:inherit;text-decoration:none}
+  a { color: inherit; text-decoration: none; }
 
-  .dots-bg{
-    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
-    background-image:radial-gradient(rgba(245,241,230,.14) 1.2px,transparent 1.2px);
-    background-size:38px 38px;
-    -webkit-mask-image:radial-gradient(ellipse 100% 60% at 80% 0%,#000,transparent 70%);
-            mask-image:radial-gradient(ellipse 100% 60% at 80% 0%,#000,transparent 70%);
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---- shared atoms ---- */
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--yellow);
   }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:2}
-
-  .eyebrow{
-    font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:500;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);
-    display:inline-flex;align-items:center;gap:.6em;
+  .label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--text-dim);
   }
-  .eyebrow::before{content:"";width:24px;height:1px;background:var(--yellow)}
-
-  /* nav */
-  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(12,11,9,.66);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{font-family:"Bricolage Grotesque",sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
-  .brand .sun{width:15px;height:15px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,210,30,.18),0 0 18px rgba(255,210,30,.5)}
-  .brand b{color:var(--yellow);font-weight:700}
-  .nav-links{display:flex;gap:2.2rem;align-items:center;font-size:.95rem;color:var(--cream-dim)}
-  .nav-links a:hover{color:var(--cream)}
-  .btn{font-family:"Familjen Grotesk";font-weight:600;font-size:.95rem;padding:.6rem 1.2rem;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:transform .25s,background .25s,color .25s,border-color .25s;display:inline-block}
-  .btn-primary{background:var(--yellow);color:var(--black)}
-  .btn-primary:hover{transform:translateY(-2px);background:#ffdd4d}
-  .btn-ghost{border-color:var(--line-2);color:var(--cream)}
-  .btn-ghost:hover{border-color:var(--yellow);color:var(--yellow)}
-
-  /* hero */
-  header{padding:clamp(54px,10vh,120px) 0 80px}
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-  h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(2.6rem,6vw,4.9rem);line-height:1.02;letter-spacing:-.03em;margin:1.3rem 0 1.4rem}
-  h1 em{font-style:normal;color:var(--yellow)}
-  .lede{font-size:clamp(1.06rem,1.4vw,1.24rem);color:var(--cream-dim);max-width:42ch;line-height:1.55}
-  .hero-cta{display:flex;gap:14px;margin-top:2.2rem;flex-wrap:wrap}
-  .hero-vis{position:relative;display:flex;justify-content:center}
-
-  /* sections */
-  section{padding:clamp(64px,10vh,118px) 0;position:relative;z-index:2}
-  .section-head{max-width:62ch;margin-bottom:54px}
-  h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:1rem 0 .9rem}
-  h2 em{font-style:normal;color:var(--yellow)}
-  .section-head p{color:var(--cream-dim);font-size:1.1rem;max-width:50ch}
-
-  /* pillars */
-  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .pillar{background:var(--black);padding:30px 26px;transition:background .3s}
-  .pillar:hover{background:var(--panel)}
-  .pillar .pk{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
-  .pillar h3{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.3rem;margin:12px 0 8px}
-  .pillar p{color:var(--cream-dim);font-size:.96rem}
-
-  /* segments */
-  #segments{background:linear-gradient(180deg,transparent,rgba(255,210,30,.025),transparent)}
-  .segs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .seg{
-    background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent,var(--yellow));
-    border-radius:6px;padding:36px 30px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,background .3s;
+  .btn {
+    font-family: var(--display); font-size: 14.5px; font-weight: 600;
+    border-radius: 11px; padding: 13px 24px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 9px;
+    border: 1px solid transparent; transition: transform .15s, background .18s, border-color .18s, color .18s;
   }
-  .seg:hover{transform:translateY(-5px);background:var(--panel-2)}
-  .seg .tag{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent,var(--yellow))}
-  .seg h3{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.55rem;line-height:1.1;margin:14px 0 12px;letter-spacing:-.01em}
-  .seg .pitch{color:var(--cream);font-size:1.02rem;margin-bottom:18px}
-  .seg ul{list-style:none;margin-top:auto;display:flex;flex-direction:column;gap:11px}
-  .seg li{display:flex;gap:11px;font-size:.95rem;color:var(--cream-dim);line-height:1.45}
-  .seg li::before{content:"";flex:0 0 7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--accent,var(--yellow))}
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--yellow); color: var(--black); }
+  .btn-primary:hover { background: #f2f12c; }
+  .btn-ghost { background: transparent; border-color: var(--line-strong); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--yellow-line); color: var(--yellow); }
 
-  /* advantages */
-  .adv{display:grid;grid-template-columns:repeat(3,1fr);gap:0 56px}
-  .adv-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
-  .adv-row .ix{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--yellow);min-width:28px}
-  .adv-row h4{font-weight:600;font-size:1.04rem}
-  .adv-row p{color:var(--cream-dim);font-size:.93rem;margin-top:2px}
-
-  /* integration band */
-  .band{border:1px solid var(--line-2);border-radius:8px;padding:clamp(36px,5vw,60px);background:radial-gradient(ellipse 80% 140% at 15% 0%,rgba(127,206,108,.08),transparent 70%),var(--panel)}
-  .band h2{max-width:18ch}
-  .band p{color:var(--cream-dim);max-width:60ch;font-size:1.08rem;margin-top:10px}
-
-  /* cta */
-  .cta{border:1px solid var(--line-2);border-radius:8px;padding:clamp(44px,7vw,78px);text-align:center;background:radial-gradient(ellipse 70% 130% at 50% 0%,rgba(255,210,30,.12),transparent 70%),var(--panel)}
-  .cta h2{margin-bottom:16px}
-  .cta p{color:var(--cream-dim);max-width:42ch;margin:0 auto 30px;font-size:1.14rem}
-  .cta .hero-cta{justify-content:center}
-
-  footer{border-top:1px solid var(--line);padding:46px 0 58px;position:relative;z-index:2}
-  .foot-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
-  .foot-meta{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--cream-faint);letter-spacing:.06em;line-height:2}
-  .foot-meta a:hover{color:var(--yellow)}
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-
-  @media(max-width:900px){
-    .hero{grid-template-columns:1fr;gap:40px}
-    .hero-vis{order:-1}
-    .pillars{grid-template-columns:repeat(2,1fr)}
-    .segs{grid-template-columns:1fr}
-    .adv{grid-template-columns:1fr;gap:0}
-    .nav-links .lk{display:none}
+  /* ---- nav ---- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(15, 15, 14, 0.72);
+    border-bottom: 1px solid var(--line);
   }
-  /* phones */
-  @media(max-width:560px){
-    body{font-size:16px}
-    .wrap{padding:0 20px}
-    .nav-inner{height:64px}
-    .brand{font-size:1.25rem}
-    nav .btn{padding:.5rem .9rem;font-size:.9rem}
-    header{padding:36px 0 56px}
-    .hero{gap:32px}
-    h1{font-size:clamp(2.1rem,8.5vw,2.7rem);margin:1rem 0 1.1rem}
-    .lede{font-size:1.05rem;max-width:none}
-    .hero-cta{gap:10px;margin-top:1.8rem}
-    .hero-cta .btn{flex:1 1 100%;text-align:center;padding:.85rem 1rem}
-    .hero-vis svg{max-width:300px}
-    section{padding:56px 0}
-    .section-head{margin-bottom:36px}
-    h2{font-size:clamp(1.7rem,6.5vw,2.1rem)}
-    .section-head p{font-size:1.02rem}
-    .pillars{grid-template-columns:1fr}
-    .pillar{padding:24px 22px}
-    .seg{padding:28px 24px}
-    .band{padding:32px 24px}
-    .cta{padding:40px 24px}
-    .cta .hero-cta .btn{flex:1 1 100%}
-    .foot-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; max-width: 1140px; margin: 0 auto; }
+  .nav .logo { height: 22px; }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a { font-size: 14px; color: var(--text-dim); transition: color .15s; }
+  .nav-links a:hover { color: var(--text); }
+  @media (max-width: 760px) { .nav-links a:not(.btn) { display: none; } }
+
+  /* ---- hero ---- */
+  .hero { position: relative; padding: 88px 0 72px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .hero h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(38px, 5.6vw, 66px); line-height: 1.02; letter-spacing: -0.025em;
+    margin: 22px 0 26px;
   }
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}
+  .hero h1 .accent { color: var(--yellow); }
+  .hero .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 24px; }
+  .hero .lede { font-size: 18px; line-height: 1.6; color: var(--text-dim); max-width: 46ch; margin-bottom: 32px; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-orb { position: relative; display: flex; justify-content: center; align-items: center; }
+  .hero-orb img {
+    width: 100%; max-width: 380px; height: auto;
+    filter: drop-shadow(0 0 60px rgba(32, 240, 176, 0.18));
+    animation: fadescale 1.3s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes fadescale { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+  @keyframes fadeup { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .hero .eyebrow, .hero h1, .hero .lede, .hero-cta { animation: fadeup .7s ease both; }
+  .hero h1 { animation-delay: .08s; }
+  .hero .lede { animation-delay: .16s; }
+  .hero-cta { animation-delay: .24s; }
+
+  /* equation strip under hero */
+  .equation {
+    margin-top: 60px; display: flex; align-items: center; justify-content: center; gap: 22px;
+    flex-wrap: wrap; padding: 22px; border: 1px solid var(--line);
+    border-radius: 16px; background: var(--panel);
+    font-family: var(--mono); animation: fadeup .7s ease .32s both;
+  }
+  .equation .term { text-align: center; }
+  .equation .term .big { font-family: var(--display); font-size: 22px; font-weight: 700; color: var(--text); }
+  .equation .term .sub { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin-top: 3px; }
+  .equation .op { font-size: 20px; color: var(--yellow); }
+  .equation .arrow { color: var(--green); font-size: 20px; }
+
+  /* ---- section scaffolding ---- */
+  section { padding: 80px 0; border-top: 1px solid var(--line); }
+  .sec-head { max-width: 62ch; margin-bottom: 48px; }
+  /* When the heading block IS the whole section (no cards after), drop the separator
+     margin so the section's own padding governs spacing — keeps gaps consistent. */
+  .wrap > .sec-head:last-child { margin-bottom: 0; }
+  .sec-head h2 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.015em; line-height: 1.08;
+    margin: 12px 0 14px;
+  }
+  .sec-head p { color: var(--text-dim); font-size: 16.5px; line-height: 1.6; }
+
+
+  /* the shift */
+  .shift-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start; margin-top: 8px; }
+  .shift-col p { font-size: 16.5px; line-height: 1.65; color: var(--text-dim); margin-bottom: 16px; }
+  .shift-col p strong { color: var(--text); font-weight: 600; }
+  .soundbite {
+    border-left: 3px solid var(--yellow); padding: 6px 0 6px 24px; margin: 0;
+  }
+  .soundbite p {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  @media (max-width: 900px) { .shift-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+
+  /* what we do */
+  .what-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 44px; align-items: start; }
+  .what-lead { font-size: 18px; line-height: 1.65; color: var(--text); }
+  .what-points { display: flex; flex-direction: column; gap: 14px; }
+  .what-points .wp { font-size: 16px; line-height: 1.5; color: var(--text-dim); padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .what-points .wp:last-child { border-bottom: none; }
+  .what-points .wp-x { font-family: var(--display); font-weight: 700; color: var(--text); margin-right: 6px; }
+  .what-points .wp-y { font-family: var(--display); font-weight: 700; color: var(--yellow); margin-right: 6px; }
+  @media (max-width: 900px) { .what-grid { grid-template-columns: 1fr; gap: 26px; } }
+
+  /* under the hood */
+  .hood-lead { font-size: 16.5px; line-height: 1.65; color: var(--text-dim); max-width: 70ch; }
+
+  /* four forces */
+  .forces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .force {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px;
+    position: relative; overflow: hidden; transition: border-color .2s, transform .2s;
+  }
+  .force:hover { border-color: var(--yellow-line); transform: translateY(-3px); }
+  .force .dot { width: 11px; height: 11px; border-radius: 50%; margin-bottom: 18px; }
+  .force:nth-child(1) .dot { background: var(--cyan);  box-shadow: 0 0 12px var(--cyan); }
+  .force:nth-child(2) .dot { background: var(--aqua); box-shadow: 0 0 12px var(--aqua); }
+  .force:nth-child(3) .dot { background: var(--sky);   box-shadow: 0 0 12px var(--sky); }
+  .force:nth-child(4) .dot { background: var(--green); box-shadow: 0 0 12px var(--green); }
+  .force h3 { font-family: var(--display); font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+  .force .role { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 12px; }
+  .force p { font-size: 14px; color: var(--text-dim); line-height: 1.55; }
+
+  /* customers */
+  .customers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .cust {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px;
+    display: flex; flex-direction: column; transition: border-color .2s;
+  }
+  .cust:hover { border-color: var(--yellow-line); }
+  .cust .for { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; }
+  .cust h3 { font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; margin-bottom: 12px; }
+  .cust > p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 18px; }
+  .cust ul { list-style: none; margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+  .cust li { font-size: 13.5px; color: var(--text); line-height: 1.5; padding-left: 20px; position: relative; }
+  .cust li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
+
+  /* features */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .feat { background: var(--black); padding: 28px 26px; transition: background .2s; }
+  .feat:hover { background: var(--panel); }
+  .feat .n { font-family: var(--mono); font-size: 11px; color: var(--yellow); margin-bottom: 14px; }
+  .feat h4 { font-family: var(--display); font-size: 16px; font-weight: 600; margin-bottom: 7px; }
+  .feat p { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+
+
+  /* resilient grid */
+  .resilient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .res { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px 22px; transition: border-color .2s; }
+  .res:hover { border-color: var(--yellow-line); }
+  .res h4 { font-family: var(--display); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .res p { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; }
+  @media (max-width: 900px) { .resilient-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .resilient-grid { grid-template-columns: 1fr; } }
+
+  /* energy gradient band */
+  .energy-band {
+    border: 1px solid var(--line); border-radius: 20px; padding: 48px 44px;
+    background:
+      radial-gradient(800px 300px at 0% 0%, rgba(32,160,240,0.08), transparent 60%),
+      radial-gradient(700px 300px at 100% 100%, rgba(128,240,0,0.07), transparent 60%),
+      var(--panel);
+    position: relative; overflow: hidden;
+  }
+  .energy-h { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3.2vw, 36px); letter-spacing: -0.015em; line-height: 1.1; margin-bottom: 18px; }
+  .energy-lead { font-size: 18px; line-height: 1.6; color: var(--text); max-width: 60ch; margin-bottom: 14px; }
+  .energy-sub { font-size: 15.5px; line-height: 1.6; color: var(--text-dim); max-width: 60ch; }
+
+  /* closing CTA */
+  .closing { text-align: center; }
+  .closing h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 46px); letter-spacing: -0.02em; margin-bottom: 16px; }
+  .closing p { color: var(--text-dim); font-size: 17px; max-width: 52ch; margin: 0 auto 30px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .foot-inner img { height: 20px; opacity: .8; }
+  .foot-inner .meta { font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+  .foot-right { display: flex; align-items: center; gap: 18px; }
+  .foot-social { color: var(--text-dim); display: inline-flex; transition: color .18s; }
+  .foot-social:hover { color: var(--yellow); }
+  .foot-legal { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--text-faint); letter-spacing: .03em; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .hero-orb { order: -1; justify-content: flex-start; }
+    .hero-orb img { max-width: 240px; }
+    .forces, .customers, .features { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+    /* Mobile: compress each feature card — number + title on one line */
+    .feat { padding: 20px 22px; }
+    .feat .n { display: inline; margin-bottom: 0; margin-right: 10px; }
+    .feat h4 { display: inline; }
+    .feat h4 + p { margin-top: 6px; }
+    /* Mobile: compress each force card — dot + title on one line */
+    .force { padding: 20px 22px; display: grid; grid-template-columns: auto 1fr; column-gap: 11px; align-items: center; }
+    .force .dot { margin-bottom: 0; grid-row: 1; }
+    .force h3 { grid-row: 1; margin-bottom: 0; }
+    .force .role { display: none; }
+    .force p { grid-column: 1 / -1; grid-row: 2; margin-top: 8px; }
+  }
+  @media (max-width: 600px) {
+    .equation { gap: 12px; padding: 18px; }
+    .equation .term .big { font-size: 17px; }
   }
 </style>
 </head>
 <body>
-<div class="dots-bg"></div>
 
-<nav>
-  <div class="wrap nav-inner">
-    <a class="brand" href="#"><span class="sun"></span>Solar<b>Ferm</b></a>
-    <div class="nav-links">
-      <a class="lk" href="#how">Technology</a>
-      <a class="lk" href="#segments">Who we serve</a>
-      <a class="lk" href="#advantages">Why it works</a>
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
-    </div>
-  </div>
-</nav>
-
-<header>
-  <div class="wrap hero">
-    <div>
-      <span class="eyebrow reveal">Carbon → Sugar</span>
-      <h1 class="reveal" style="transition-delay:.07s">Fermentation-grade sugar, grown from <em>carbon, not crops.</em></h1>
-      <p class="lede reveal" style="transition-delay:.14s">SolarFerm integrates engineered microorganisms, continuous bioreactors, and industrial energy systems to convert carbon dioxide into fermentable sugar at industrial scale — decoupled from land, weather, and harvest.</p>
-      <div class="hero-cta reveal" style="transition-delay:.21s">
-        <a href="#contact" class="btn btn-primary">Talk to us about feedstock</a>
-        <a href="#how" class="btn btn-ghost">How it works</a>
-      </div>
-    </div>
-    <div class="hero-vis reveal" style="transition-delay:.26s">
-      <svg viewBox="0 0 460 360" width="100%" style="max-width:480px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carbon dioxide plus energy converts into a six-carbon sugar molecule">
-        <defs>
-          <style>
-            @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
-            @keyframes ray{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-            .ray{transform-origin:118px 96px;animation:ray 3s ease-in-out infinite}
-            .flow{stroke-dasharray:4 7;animation:dash 2.4s linear infinite}
-            @keyframes dash{to{stroke-dashoffset:-22}}
-            @media(prefers-reduced-motion:reduce){.ray,.flow{animation:none}}
-          </style>
-        </defs>
-        <!-- CO2 node -->
-        <g>
-          <circle cx="80" cy="220" r="26" fill="none" stroke="#5fb0e8" stroke-width="1.5"/>
-          <circle cx="44" cy="220" r="15" fill="#5fb0e8" opacity=".22"/>
-          <circle cx="116" cy="220" r="15" fill="#5fb0e8" opacity=".22"/>
-          <circle cx="44" cy="220" r="15" fill="none" stroke="#5fb0e8" stroke-width="1.2"/>
-          <circle cx="116" cy="220" r="15" fill="none" stroke="#5fb0e8" stroke-width="1.2"/>
-          <text x="80" y="276" text-anchor="middle" fill="#5fb0e8" font-family="IBM Plex Mono,monospace" font-size="15">CO₂</text>
-          <text x="80" y="296" text-anchor="middle" fill="rgba(245,241,230,.45)" font-family="IBM Plex Mono,monospace" font-size="10">CARBON</text>
-        </g>
-        <text x="80" y="120" text-anchor="middle" fill="#5fb0e8" font-family="IBM Plex Mono,monospace" font-size="12">+</text>
-        <!-- energy sun -->
-        <g class="ray">
-          <circle cx="118" cy="96" r="17" fill="#ffd21e" opacity=".9"/>
-          <g stroke="#ffd21e" stroke-width="2" stroke-linecap="round">
-            <line x1="118" y1="64" x2="118" y2="54"/><line x1="118" y1="138" x2="118" y2="128"/>
-            <line x1="86" y1="96" x2="76" y2="96"/><line x1="160" y1="96" x2="150" y2="96"/>
-            <line x1="95" y1="73" x2="88" y2="66"/><line x1="148" y1="119" x2="141" y2="112"/>
-            <line x1="141" y1="73" x2="148" y2="66"/><line x1="88" y1="126" x2="95" y2="119"/>
-          </g>
-        </g>
-        <text x="118" y="166" text-anchor="middle" fill="#ffd21e" font-family="IBM Plex Mono,monospace" font-size="10">ENERGY</text>
-        <!-- arrow -->
-        <line class="flow" x1="150" y1="190" x2="270" y2="180" stroke="rgba(245,241,230,.55)" stroke-width="1.6"/>
-        <path d="M264 173 L278 180 L264 187" fill="none" stroke="rgba(245,241,230,.55)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="210" y="160" text-anchor="middle" fill="rgba(245,241,230,.45)" font-family="IBM Plex Mono,monospace" font-size="10">CHEMISTRY · BIOLOGY</text>
-        <!-- sugar hexagon -->
-        <g>
-          <polygon points="360,110 408,138 408,194 360,222 312,194 312,138" fill="rgba(127,206,108,.10)" stroke="#7fce6c" stroke-width="1.8" stroke-linejoin="round"/>
-          <circle cx="360" cy="110" r="4.5" fill="#7fce6c"/><circle cx="408" cy="138" r="4.5" fill="#7fce6c"/>
-          <circle cx="408" cy="194" r="4.5" fill="#7fce6c"/><circle cx="360" cy="222" r="4.5" fill="#7fce6c"/>
-          <circle cx="312" cy="194" r="4.5" fill="#7fce6c"/><circle cx="312" cy="138" r="4.5" fill="#7fce6c"/>
-          <text x="360" y="172" text-anchor="middle" fill="#7fce6c" font-family="IBM Plex Mono,monospace" font-size="13">C₆H₁₂O₆</text>
-          <text x="360" y="258" text-anchor="middle" fill="#7fce6c" font-family="IBM Plex Mono,monospace" font-size="15">SUGAR</text>
-          <text x="360" y="278" text-anchor="middle" fill="rgba(245,241,230,.45)" font-family="IBM Plex Mono,monospace" font-size="10">FERMENTATION-GRADE</text>
-        </g>
-      </svg>
-    </div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top"><img class="logo" src="assets/solarferm-logo-white.svg" alt="Solarferm" /></a>
+    <nav class="nav-links">
+      <a href="#how">Technology</a>
+      <a href="#customers">Who we serve</a>
+      <a href="#why">Why it works</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </nav>
   </div>
 </header>
 
-<section id="how">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">From C1 carbon to C6 sugar</span>
-      <h2>Four forces, <em>one platform.</em></h2>
-      <p>We optimise chemical feedstock synthesis for biological sugar production, using the most efficient energy sources and gas and liquid feedstocks — no crops, no solid feedstocks, no harsh pretreatment.</p>
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Fuel for the bioeconomy</div>
+      <h1>Abundant feedstock to power <span class="accent">biomanufacturing at scale.</span></h1>
+      <div class="kicker">Fermentation-grade sugar, grown from carbon, not crops</div>
+      <p class="lede">
+        Biomanufacturing is becoming national infrastructure. Its limit is feedstock.
+        Solarferm makes fermentation-grade sugar from carbon dioxide and energy. Abundant,
+        predictable, and decoupled from land, weather, and harvest.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:hello@solarferm.com?subject=Solarferm%20feedstock%20enquiry" class="btn btn-primary">Talk to us about feedstock</a>
+        <a href="#how" class="btn btn-ghost">How it works</a>
+      </div>
     </div>
-    <div class="pillars">
-      <div class="pillar reveal"><div class="pk">Carbon</div><h3>CO₂</h3><p>Carbon dioxide provides the carbon backbone for every molecule we build.</p></div>
-      <div class="pillar reveal" style="transition-delay:.07s"><div class="pk">Power</div><h3>Energy</h3><p>Industrial energy provides the driving force that powers the conversion.</p></div>
-      <div class="pillar reveal" style="transition-delay:.14s"><div class="pk">Process</div><h3>Chemistry</h3><p>Engineered chemistry does the heavy lifting to form the feedstocks.</p></div>
-      <div class="pillar reveal" style="transition-delay:.21s"><div class="pk">Microbes</div><h3>Biology</h3><p>Engineered microorganisms assemble complexity efficiently into sugar.</p></div>
+    <div class="hero-orb">
+      <img src="assets/solarferm-orb-carbon-to-sugar.svg" alt="Solarferm orb: carbon dioxide and energy converted into fermentation-grade sugar" />
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="equation">
+      <div class="term"><div class="big">CO₂ · H₂</div><div class="sub">Carbon + Hydrogen</div></div>
+      <div class="op">+</div>
+      <div class="term"><div class="big">Chemistry · Biology</div><div class="sub">Engineered conversion</div></div>
+      <div class="arrow">→</div>
+      <div class="term"><div class="big">C₆H₁₂O₆</div><div class="sub">Fermentation-grade sugar</div></div>
     </div>
   </div>
 </section>
 
-<section id="segments">
+
+<!-- THE SHIFT -->
+<section id="shift">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Who we serve</span>
-      <h2>One feedstock, built for <em>three kinds of customer.</em></h2>
-      <p>Whether you sell the energy, ferment the sugar, or formulate the product, SolarFerm fits into what you already do.</p>
+    <div class="sec-head" style="max-width:70ch">
+      <div class="label">The shift</div>
+      <h2>Fermentation has become a question of sovereignty.</h2>
+      <p>
+        The conversation around fermentation has moved beyond venture capital and
+        alternative proteins. Governments now view biomanufacturing through the lens of
+        food security, supply chain resilience, and sovereign capability, and investment
+        is shifting from individual products to national manufacturing platforms.
+      </p>
     </div>
-    <div class="segs">
-      <div class="seg reveal" style="--accent:var(--blue)">
-        <span class="tag">For energy companies</span>
-        <h3>Turn electrons and CO₂ into molecules</h3>
-        <p class="pitch">A productive, high-value outlet for power and captured carbon — convert energy and CO₂ into a storable, sellable product instead of selling raw electrons.</p>
+    <div class="shift-grid">
+      <div class="shift-col">
+        <p>
+          As that shift accelerates, one question rises above the rest: where do the
+          inputs come from? Fermentation is only as scalable as its feedstock supply.
+        </p>
+        <p>
+          Biomanufacturing at the scale being discussed globally needs feedstocks that are
+          <strong>abundant, predictable, cost-effective, and decoupled from agricultural
+          volatility.</strong> That is the constraint Solarferm exists to remove.
+        </p>
+      </div>
+      <blockquote class="soundbite">
+        <p>The industry has spent a decade optimising microbes. The next decade will be about optimising the inputs that feed them.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT WE DO -->
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:64ch">
+      <div class="label">What we do</div>
+      <h2>A new way to make industrial sugar.</h2>
+    </div>
+    <div class="what-grid">
+      <p class="what-lead">
+        Solarferm has built a new way to produce industrial sugar, the critical feedstock
+        for biomanufacturing. Using hydrogen, carbon dioxide, and existing energy
+        infrastructure, we convert abundant inputs into scalable, reliable feedstock.
+      </p>
+      <div class="what-points">
+        <div class="wp"><span class="wp-x">No</span> dependence on traditional agriculture.</div>
+        <div class="wp"><span class="wp-x">No</span> exposure to climate volatility.</div>
+        <div class="wp"><span class="wp-y">Just</span> consistent quality and predictable pricing, at industrial scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR FORCES -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label">How we do it</div>
+      <h2>Four forces, one platform.</h2>
+      <p>
+        We optimise chemical feedstock synthesis for biological sugar production, using the
+        most efficient energy sources, gas and liquid feedstocks, no crops, no solid
+        feedstocks, no harsh pretreatment.
+      </p>
+    </div>
+    <div class="forces">
+      <div class="force">
+        <div class="dot"></div>
+        <div class="role">Carbon</div>
+        <h3>CO₂</h3>
+        <p>Carbon dioxide provides the carbon backbone for every molecule we build.</p>
+      </div>
+      <div class="force">
+        <div class="dot"></div>
+        <div class="role">Power</div>
+        <h3>Energy</h3>
+        <p>Industrial energy provides the driving force that powers the conversion.</p>
+      </div>
+      <div class="force">
+        <div class="dot"></div>
+        <div class="role">Process</div>
+        <h3>Chemistry</h3>
+        <p>Engineered chemistry does the heavy lifting to form the feedstocks.</p>
+      </div>
+      <div class="force">
+        <div class="dot"></div>
+        <div class="role">Microbes</div>
+        <h3>Biology</h3>
+        <p>Engineered microorganisms assemble complexity efficiently into sugar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- UNDER THE HOOD -->
+<section id="hood">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:70ch">
+      <div class="label">Under the hood</div>
+      <h2 class="hood-h">Proven chemistry, advanced biology, one continuous loop.</h2>
+      <p class="hood-lead">
+        Beneath the simplicity is serious engineering. Solarferm combines proven
+        thermocatalytic processes with advanced electrochemical bioreactor technology,
+        developed with leading research institutions, into a single continuous production
+        loop, transforming energy into programmable sugars ready to power the next
+        generation of biomanufacturing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ENERGY GRADIENT -->
+<section id="energy">
+  <div class="wrap">
+    <div class="energy-band">
+      <div class="label" style="margin-bottom:14px">The energy story</div>
+      <h2 class="energy-h">Energy-source agnostic.</h2>
+      <p class="energy-lead">
+        Deployable on existing infrastructure today, scaling onto next-generation
+        renewables as they reach parity, it works now, and improves as energy gets
+        cleaner and cheaper.
+      </p>
+      <p class="energy-sub">
+        Low-cost power, existing hydrogen, or future renewables.<br />
+        A deployment gradient, not a single bet.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS -->
+<section id="customers">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label">Who we serve</div>
+      <h2>One feedstock, built for three kinds of customer.</h2>
+      <p>Whether you sell the energy, ferment the sugar, or formulate the product, Solarferm fits into what you already do.</p>
+    </div>
+    <div class="customers">
+      <div class="cust">
+        <div class="for">For energy companies</div>
+        <h3>Turn energy and CO₂ into molecules</h3>
+        <p>A productive, high-value outlet for energy and captured carbon: convert hydrogen and CO₂ into a storable, sellable product instead of selling raw energy.</p>
         <ul>
-          <li>A power-to-product offtake for available or low-cost energy</li>
+          <li>An energy-to-product offtake for available or low-cost energy</li>
           <li>Carbon utilisation that turns CO₂ into revenue, not liability</li>
-          <li>Continuous, modular plants sited next to your energy and carbon sources</li>
+          <li>Diversify your markets and revenue streams for the energy transition</li>
         </ul>
       </div>
-      <div class="seg reveal" style="--accent:var(--yellow);transition-delay:.08s">
-        <span class="tag">For biomanufacturers</span>
+      <div class="cust">
+        <div class="for">For biomanufacturers</div>
         <h3>Sugar that doesn't ride the harvest</h3>
-        <p class="pitch">Fermentation-grade sugar with pricing decoupled from crops, land, and weather — delivered continuously from modular plants you can site near your fermentation capacity.</p>
+        <p>Fermentation-grade sugar with pricing decoupled from crops, land, and weather, delivered continuously from modular plants you can site near your fermentation capacity.</p>
         <ul>
           <li>Fermentation-grade output, ready to feed your strains</li>
           <li>Pricing insulated from agricultural commodity volatility</li>
-          <li>Lower carbon intensity than crop-derived sugar</li>
-          <li>Secure, local, continuous supply</li>
+          <li>Site plants next to your fermentation capacity</li>
         </ul>
       </div>
-      <div class="seg reveal" style="--accent:var(--green);transition-delay:.16s">
-        <span class="tag">For ingredient manufacturers</span>
-        <h3>Low-carbon building blocks, clean story</h3>
-        <p class="pitch">Sugars and organic acids made from carbon dioxide — traceable, sustainable inputs that strengthen both your supply chain and your sustainability claims.</p>
+      <div class="cust">
+        <div class="for">For ingredient makers</div>
+        <h3>Programmable sugars, from commodity to niche and rare</h3>
+        <p>A single carbon-to-molecule platform that makes not just commodity sugar, but the specific sugars that are hard to source any other way, with a traceable, low-carbon story built in.</p>
         <ul>
-          <li>Sugars and organic acids from a single carbon-to-molecule platform</li>
-          <li>Traceable provenance from CO₂ to finished input</li>
-          <li>Supply resilience, independent of farm commodity markets</li>
+          <li>Programmable output: commodity, specialty, niche, and rare sugars</li>
+          <li>Lower carbon intensity than agricultural sources</li>
+          <li>Tune the molecule to your formulation</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="advantages">
+<!-- WHY / FEATURES -->
+<section id="why">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why this architecture matters</span>
-      <h2>Engineered for <em>industrial reality.</em></h2>
+    <div class="sec-head">
+      <div class="label">Why it works</div>
+      <h2>Engineered for industrial reality.</h2>
     </div>
-    <div class="adv">
-      <div class="adv-row reveal"><div class="ix">01</div><div><h4>Continuous operation</h4><p>Steady output, not batch campaigns.</p></div></div>
-      <div class="adv-row reveal"><div class="ix">02</div><div><h4>Synthetic feedstocks</h4><p>Engineered inputs, consistent quality.</p></div></div>
-      <div class="adv-row reveal"><div class="ix">03</div><div><h4>No solid feedstocks</h4><p>No biomass logistics or storage.</p></div></div>
-      <div class="adv-row reveal"><div class="ix">04</div><div><h4>No harsh pretreatment</h4><p>Fewer steps, lower cost and energy.</p></div></div>
-      <div class="adv-row reveal"><div class="ix">05</div><div><h4>Fermentation-grade output</h4><p>Sugar ready for downstream use.</p></div></div>
-      <div class="adv-row reveal"><div class="ix">06</div><div><h4>Modular deployment</h4><p>Infrastructure-compatible, sited where needed.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="band reveal">
-      <span class="eyebrow">Systems integration</span>
-      <h2>Integration unlocks <em>multipliers.</em></h2>
-      <p>Deployed as part of an integrated system, second- and third-order benefits emerge — improved efficiency and continuous recycling of carbon across the biomanufacturing supply chain. The same platform architecture that makes sugar today can support additional carbon-to-molecule and energy-to-carbon pathways over time.</p>
+    <div class="features">
+      <div class="feat"><div class="n">01</div><h4>Continuous operation</h4><p>Steady output, not batch campaigns.</p></div>
+      <div class="feat"><div class="n">02</div><h4>Synthetic feedstocks</h4><p>Engineered inputs, consistent quality.</p></div>
+      <div class="feat"><div class="n">03</div><h4>No solid feedstocks</h4><p>No biomass logistics or storage.</p></div>
+      <div class="feat"><div class="n">04</div><h4>No harsh pretreatment</h4><p>Fewer steps, lower cost and energy.</p></div>
+      <div class="feat"><div class="n">05</div><h4>Fermentation-grade output</h4><p>Sugar ready for downstream use.</p></div>
+      <div class="feat"><div class="n">06</div><h4>Modular deployment</h4><p>Infrastructure-compatible, sited where needed.</p></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
+
+
+<!-- SECURE / ONSHORE / RESILIENT -->
+<section id="resilient">
   <div class="wrap">
-    <div class="cta reveal">
-      <span class="eyebrow" style="justify-content:center">Let's talk</span>
-      <h2>Looking for a feedstock that <em>scales with you?</em></h2>
-      <p>Tell us what you make and how much sugar or carbon it takes. We'll show you where SolarFerm fits.</p>
-      <div class="hero-cta">
-        <a href="mailto:info@solarferm.com" class="btn btn-primary">info@solarferm.com</a>
-        <a href="https://www.linkedin.com/company/solarferm" class="btn btn-ghost">Connect on LinkedIn</a>
+    <div class="sec-head">
+      <div class="label">Secure by design</div>
+      <h2>Secure, onshore, resilient.</h2>
+      <p>However you use it, Solarferm gives you a supply chain that does not depend on farms, weather, or distant commodity markets.</p>
+    </div>
+    <div class="resilient-grid">
+      <div class="res">
+        <h4>Onshore and local</h4>
+        <p>Modular plants sited where you need them, not where the crops grow.</p>
+      </div>
+      <div class="res">
+        <h4>Commodity-independent</h4>
+        <p>Pricing and supply insulated from agricultural commodity volatility.</p>
+      </div>
+      <div class="res">
+        <h4>Lower carbon intensity</h4>
+        <p>A smaller footprint than crop-derived sugar, by construction.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:62ch">
+      <div class="label">Who we are</div>
+      <h2>Scientists, technologists, builders, and industrialists.</h2>
+      <p>
+        Solarferm brings together deep science, hard engineering, and industrial
+        know-how, the people who can take a process from the lab to the plant. We work
+        with world-class partners, and we are growing, with more to share soon.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="contact" class="closing">
+  <div class="wrap">
+    <h2>Looking for a feedstock that scales with you?</h2>
+    <p>Tell us what you make and how much sugar or carbon it takes. We'll show you where Solarferm fits.</p>
+    <a href="mailto:hello@solarferm.com?subject=Solarferm%20feedstock%20enquiry" class="btn btn-primary">Talk to us about feedstock</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-inner">
-    <div>
-      <a class="brand" href="#"><span class="sun"></span>Solar<b>Ferm</b></a>
-      <div class="foot-meta" style="margin-top:10px">Carbon to sugar. Sustainable, economical, scalable.</div>
+    <img src="assets/solarferm-logo-white.svg" alt="Solarferm logo" />
+    <div class="foot-right">
+      <span class="meta">Fuel for the bioeconomy · Fermentation-grade feedstock</span>
+      <a class="foot-social" href="https://www.linkedin.com/company/solarferm" target="_blank" rel="noopener" aria-label="Solarferm on LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+        </svg>
+      </a>
     </div>
-    <div class="foot-meta">
-      <a href="mailto:info@solarferm.com">info@solarferm.com</a> ·
-      <a href="https://www.linkedin.com/company/solarferm">LinkedIn</a> ·
-      <a href="https://twitter.com/solarferm">Twitter</a><br>
-      © 2026 Solarferm Limited. All rights reserved.
-    </div>
+  </div>
+  <div class="wrap foot-legal">
+    <span>© 2026 Solarferm. All rights reserved.</span>
   </div>
 </footer>
 
-<script>
-(function(){
-  var obs=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
-  },{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-})();
-</script>
 </body>
 </html>
