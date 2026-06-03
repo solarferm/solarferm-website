@@ -282,19 +282,68 @@
   .energy-lead { font-size: 18px; line-height: 1.6; color: var(--text); max-width: 60ch; margin-bottom: 14px; }
   .energy-sub { font-size: 15.5px; line-height: 1.6; color: var(--text-dim); max-width: 60ch; }
 
-  /* closing CTA */
-  .closing { text-align: center; }
-  .closing h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 46px); letter-spacing: -0.02em; margin-bottom: 16px; }
-  .closing p { color: var(--text-dim); font-size: 17px; max-width: 52ch; margin: 0 auto 30px; }
+  /* supporters & partners (light band) */
+  .backers {
+    background: #f5f3ec;
+    border-top: none;
+    padding: 72px 0 8px;
+  }
+  .backers-group { margin-bottom: 52px; }
+  .backers-group:last-child { margin-bottom: 0; }
+  .backers-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1a1a17;
+    margin-bottom: 26px;
+    text-align: center;
+  }
+  .backers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 28px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .backers .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    border-radius: 12px;
+    transition: background .18s, transform .18s;
+  }
+  .backers .logo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    opacity: 0.86;
+    transition: opacity .18s;
+  }
+  .backers .logo:hover { background: #ffffff; transform: translateY(-2px); }
+  .backers .logo:hover img { opacity: 1; }
+  @media (max-width: 760px) {
+    .backers { padding: 56px 0; }
+    .backers-grid { grid-template-columns: repeat(2, 1fr); gap: 14px 18px; }
+    .backers .logo img { max-width: 150px; }
+  }
 
-  footer { border-top: 1px solid var(--line); padding: 40px 0; }
+  /* closing CTA (light) */
+  .closing { text-align: center; background: #f5f3ec; padding-top: 24px; }
+  .closing h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 46px); letter-spacing: -0.02em; margin-bottom: 16px; color: #1a1a17; }
+  .closing p { color: #1a1a17; font-size: 17px; max-width: 52ch; margin: 0 auto 30px; }
+  .closing .btn-primary { background: #1a1a17; color: #f5f3ec; }
+  .closing .btn-primary:hover { background: #000; }
+
+  footer { background: #f5f3ec; border-top: 1px solid #e3e0d5; padding: 40px 0; }
   .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .foot-inner img { height: 20px; opacity: .8; }
-  .foot-inner .meta { font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+  .foot-inner img { height: 20px; opacity: .9; }
+  .foot-inner .meta { font-family: var(--mono); font-size: 11px; color: #1a1a17; }
   .foot-right { display: flex; align-items: center; gap: 18px; }
-  .foot-social { color: var(--text-dim); display: inline-flex; transition: color .18s; }
-  .foot-social:hover { color: var(--yellow); }
-  .foot-legal { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--text-faint); letter-spacing: .03em; }
+  .foot-social { color: #1a1a17; display: inline-flex; transition: color .18s; }
+  .foot-social:hover { color: #1a1a17; }
+  .foot-legal { margin-top: 18px; padding-top: 18px; border-top: 1px solid #e3e0d5; font-family: var(--mono); font-size: 11px; color: #1a1a17; letter-spacing: .03em; }
 
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -609,6 +658,34 @@
   </div>
 </section>
 
+<!-- SUPPORTERS & PARTNERS -->
+<section class="backers">
+  <div class="wrap">
+    <div class="backers-group">
+      <div class="backers-label">Supported by</div>
+      <div class="backers-grid">
+        <a class="logo" href="https://www.callaghaninnovation.govt.nz/" target="_blank" rel="noopener"><img src="assets/logos/callaghan.png" alt="Callaghan Innovation" /></a>
+        <a class="logo" href="https://creativehq.co.nz/" target="_blank" rel="noopener"><img src="assets/logos/creativehq.png" alt="CreativeHQ" /></a>
+        <a class="logo" href="https://creativehq.co.nz/build-for-founders/aurora-climate-lab/" target="_blank" rel="noopener"><img src="assets/logos/aurora.jpg" alt="Aurora Climate Lab" /></a>
+        <a class="logo" href="https://sproutagritech.com/" target="_blank" rel="noopener"><img src="assets/logos/sprout.png" alt="Sprout AgriTech" /></a>
+        <a class="logo" href="https://agrifutures.com.au/" target="_blank" rel="noopener"><img src="assets/logos/agrifutures.png" alt="AgriFutures Australia" /></a>
+        <a class="logo" href="https://futurefoodtechsf.com/" target="_blank" rel="noopener"><img src="assets/logos/futurefoodtech.png" alt="Future Food-Tech" /></a>
+      </div>
+    </div>
+    <div class="backers-group">
+      <div class="backers-label">Research &amp; development partners</div>
+      <div class="backers-grid">
+        <a class="logo" href="https://www.recarbhub.org/" target="_blank" rel="noopener"><img src="assets/logos/arc-recarb.png" alt="ARC Research Hub for Carbon Utilisation and Recycling (RECARB)" /></a>
+        <a class="logo" href="https://www.monash.edu/" target="_blank" rel="noopener"><img src="assets/logos/monash.png" alt="Monash University" /></a>
+        <a class="logo" href="https://www.uq.edu.au/" target="_blank" rel="noopener"><img src="assets/logos/uq.png" alt="The University of Queensland" /></a>
+        <a class="logo" href="https://www.agflive.com/" target="_blank" rel="noopener"><img src="assets/logos/genome-foundry.png" alt="Australian Genome Foundry" /></a>
+        <a class="logo" href="https://bioplatforms.com/" target="_blank" rel="noopener"><img src="assets/logos/bioplatforms.png" alt="Bioplatforms Australia" /></a>
+        <a class="logo" href="https://www.woodside.com/" target="_blank" rel="noopener"><img src="assets/logos/woodside.png" alt="Woodside Energy" /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CLOSING -->
 <section id="contact" class="closing">
   <div class="wrap">
@@ -620,7 +697,7 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <img src="assets/solarferm-logo-white.svg" alt="Solarferm logo" />
+    <img src="assets/solarferm-logo-black.svg" alt="Solarferm logo" />
     <div class="foot-right">
       <span class="meta">Fuel for the bioeconomy · Fermentation-grade feedstock</span>
       <a class="foot-social" href="https://www.linkedin.com/company/solarferm" target="_blank" rel="noopener" aria-label="Solarferm on LinkedIn">
