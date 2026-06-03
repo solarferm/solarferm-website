@@ -146,7 +146,8 @@
     margin: 22px 0 26px;
   }
   .hero h1 .accent { color: var(--yellow); }
-  .hero .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 24px; }
+  .hero .cat-line { font-size: 16px; line-height: 1.5; color: var(--text-dim); margin: 0 0 24px; max-width: 48ch; }
+  .hero .cat-line .cat { font-family: var(--display); font-weight: 600; color: var(--text); }
   .hero .lede { font-size: 18px; line-height: 1.6; color: var(--text-dim); max-width: 46ch; margin-bottom: 32px; }
   .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
   .hero-orb { position: relative; display: flex; justify-content: center; align-items: center; }
@@ -174,6 +175,7 @@
   .equation .term .sub { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin-top: 3px; }
   .equation .op { font-size: 20px; color: var(--yellow); }
   .equation .arrow { color: var(--green); font-size: 20px; }
+  .equation-gloss { text-align: left; max-width: 64ch; margin: 18px 0 0; font-size: 15px; line-height: 1.6; color: var(--text-dim); }
 
   /* ---- section scaffolding ---- */
   section { padding: 80px 0; border-top: 1px solid var(--line); }
@@ -187,6 +189,7 @@
     margin: 12px 0 14px;
   }
   .sec-head p { color: var(--text-dim); font-size: 16.5px; line-height: 1.6; }
+  .traction { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 13px; line-height: 1.6; letter-spacing: 0.01em; color: var(--text-faint); max-width: 60ch; }
 
 
   /* the shift */
@@ -206,6 +209,7 @@
 
   /* what we do */
   .what-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 44px; align-items: start; }
+  .what-firstproduct { font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--yellow); margin-top: 14px; }
   .what-lead { font-size: 18px; line-height: 1.65; color: var(--text); }
   .what-points { display: flex; flex-direction: column; gap: 14px; }
   .what-points .wp { font-size: 16px; line-height: 1.5; color: var(--text-dim); padding-bottom: 14px; border-bottom: 1px solid var(--line); }
@@ -338,7 +342,7 @@
     <div>
       <div class="eyebrow">Fuel for the bioeconomy</div>
       <h1>Abundant feedstock to power <span class="accent">biomanufacturing at scale.</span></h1>
-      <div class="kicker">Fermentation-grade sugar, grown from carbon, not crops</div>
+      <div class="cat-line"><span class="cat">The feedstock platform.</span> First product: fermentation-grade sugar, grown from carbon, not crops.</div>
       <p class="lede">
         Biomanufacturing is becoming national infrastructure. Its limit is feedstock.
         Solarferm makes fermentation-grade sugar from carbon dioxide and energy. Abundant,
@@ -362,6 +366,7 @@
       <div class="arrow">→</div>
       <div class="term"><div class="big">C₆H₁₂O₆</div><div class="sub">Fermentation-grade sugar</div></div>
     </div>
+    <p class="equation-gloss">We combine industrial carbon, hydrogen, chemistry, and engineered microorganisms in a continuous process that converts simple molecules into fermentation-grade sugars.</p>
   </div>
 </section>
 
@@ -404,13 +409,14 @@
   <div class="wrap">
     <div class="sec-head" style="max-width:64ch">
       <div class="label">What we do</div>
-      <h2>A new way to make industrial sugar.</h2>
+      <h2>A new feedstock platform for biomanufacturing.</h2>
+      <p class="what-firstproduct">Our first product is fermentation-grade sugar.</p>
     </div>
     <div class="what-grid">
       <p class="what-lead">
-        Solarferm has built a new way to produce industrial sugar, the critical feedstock
-        for biomanufacturing. Using hydrogen, carbon dioxide, and existing energy
-        infrastructure, we convert abundant inputs into scalable, reliable feedstock.
+        Solarferm produces industrial feedstock from carbon, not crops. Using hydrogen,
+        carbon dioxide, and existing energy infrastructure, we convert abundant inputs into
+        scalable, reliable feedstock for biomanufacturing.
       </p>
       <div class="what-points">
         <div class="wp"><span class="wp-x">No</span> dependence on traditional agriculture.</div>
@@ -487,13 +493,13 @@
       <div class="label" style="margin-bottom:14px">The energy story</div>
       <h2 class="energy-h">Energy-source agnostic.</h2>
       <p class="energy-lead">
-        Deployable on existing infrastructure today, scaling onto next-generation
-        renewables as they reach parity, it works now, and improves as energy gets
-        cleaner and cheaper.
+        The core conversion is thermochemical, not dependent on cheap electricity. We
+        deploy where carbon and energy are abundant or under-utilised, rather than
+        competing with rising demand from transport and data centres.
       </p>
       <p class="energy-sub">
-        Low-cost power, existing hydrogen, or future renewables.<br />
-        A deployment gradient, not a single bet.
+        Abundant thermal and carbon sources, electrification, waste heat, or geothermal.<br />
+        A deployment gradient, not a single bet on a cheap-power future.
       </p>
     </div>
   </div>
@@ -510,17 +516,17 @@
     <div class="customers">
       <div class="cust">
         <div class="for">For energy companies</div>
-        <h3>Turn energy and CO₂ into molecules</h3>
-        <p>A productive, high-value outlet for energy and captured carbon: convert hydrogen and CO₂ into a storable, sellable product instead of selling raw energy.</p>
+        <h3>Carbon and energy, monetised as feedstock</h3>
+        <p>Convert carbon and energy into a storable, sellable feedstock, sited where both are abundant or under-utilised, rather than competing for contested power.</p>
         <ul>
-          <li>An energy-to-product offtake for available or low-cost energy</li>
+          <li>Put waste carbon and stranded energy to work</li>
           <li>Carbon utilisation that turns CO₂ into revenue, not liability</li>
-          <li>Diversify your markets and revenue streams for the energy transition</li>
+          <li>Diversify revenue streams for the energy transition</li>
         </ul>
       </div>
       <div class="cust">
         <div class="for">For biomanufacturers</div>
-        <h3>Sugar that doesn't ride the harvest</h3>
+        <h3>Feedstock that doesn't ride the harvest</h3>
         <p>Fermentation-grade sugar with pricing decoupled from crops, land, and weather, delivered continuously from modular plants you can site near your fermentation capacity.</p>
         <ul>
           <li>Fermentation-grade output, ready to feed your strains</li>
@@ -550,12 +556,12 @@
       <h2>Engineered for industrial reality.</h2>
     </div>
     <div class="features">
-      <div class="feat"><div class="n">01</div><h4>Commodity-scale economics</h4><p>Designed to compete on price.</p></div>
-      <div class="feat"><div class="n">02</div><h4>Resilience by design</h4><p>Onshore, local production, insulated from shocks.</p></div>
-      <div class="feat"><div class="n">03</div><h4>Continuous output</h4><p>Steady, bankable, long-term supply.</p></div>
-      <div class="feat"><div class="n">04</div><h4>Synthetic feedstocks</h4><p>Engineered inputs, consistent quality.</p></div>
-      <div class="feat"><div class="n">05</div><h4>No agricultural feedstocks</h4><p>No crops, seasons, or climate risk.</p></div>
-      <div class="feat"><div class="n">06</div><h4>Modular deployment</h4><p>Sited where you need it.</p></div>
+      <div class="feat"><div class="n">01</div><h4>Commodity-scale economics</h4><p>Built on industrial inputs and infrastructure already deployed at global scale.</p></div>
+      <div class="feat"><div class="n">02</div><h4>Decoupled from agriculture</h4><p>No cropland, irrigation, harvest cycles, or agricultural supply chains.</p></div>
+      <div class="feat"><div class="n">03</div><h4>Continuous manufacturing</h4><p>Year-round output, independent of weather and growing seasons.</p></div>
+      <div class="feat"><div class="n">04</div><h4>Infrastructure compatible</h4><p>Deployable alongside existing energy, carbon, and manufacturing assets.</p></div>
+      <div class="feat"><div class="n">05</div><h4>Designed for fermentation</h4><p>Outputs integrate with existing fermentation and downstream systems.</p></div>
+      <div class="feat"><div class="n">06</div><h4>Scale through replication</h4><p>Modular facilities add capacity incrementally where demand exists.</p></div>
     </div>
   </div>
 </section>
@@ -598,6 +604,7 @@
         know-how, the people who can take a process from the lab to the plant. We work
         with world-class partners, and we are growing, with more to share soon.
       </p>
+      <p class="traction">Supported by leading research and industry programmes across Australia, New Zealand, and the United States.</p>
     </div>
   </div>
 </section>
