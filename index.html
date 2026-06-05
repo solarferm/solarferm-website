@@ -267,11 +267,17 @@
   }
   .cust:hover { border-color: var(--yellow-line); }
   .cust .for { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; }
-  .cust h3 { font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; margin-bottom: 0; height: 3.45em; display: flex; align-items: flex-start; }
+  .cust h3 { font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; margin-bottom: 14px; }
   .cust > p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 18px; }
-  .cust ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .cust ul { list-style: none; margin-top: 0; display: flex; flex-direction: column; gap: 10px; }
   .cust li { font-size: 13.5px; color: var(--text); line-height: 1.5; padding-left: 20px; position: relative; }
   .cust li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
+  /* Align eyebrow / headline / bullets across all three cards regardless of font metrics */
+  @supports (grid-template-rows: subgrid) {
+    .customers { grid-template-rows: auto auto auto; }
+    .cust { grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 0; }
+    .cust h3 { margin-bottom: 0; padding-bottom: 14px; }
+  }
 
   /* features */
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
