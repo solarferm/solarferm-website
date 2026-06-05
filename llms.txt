@@ -1,38 +1,44 @@
 # Solarferm
 
-> Fuel for the bioeconomy. Solarferm produces fermentation-grade sugar from carbon
-> dioxide, hydrogen, and existing energy infrastructure — an abundant, predictable,
-> agriculture-independent feedstock for biomanufacturing at industrial scale.
+> Fuel for the bioeconomy. Solarferm is a feedstock platform for biomanufacturing. Its
+> first product is fermentation-grade sugar, made from carbon and energy, not crops. An
+> abundant, predictable, agriculture-independent feedstock for biomanufacturing at
+> industrial scale.
 
 ## What Solarferm does
-Solarferm makes industrial sugar, the critical feedstock for biomanufacturing, from
-carbon dioxide and energy rather than from crops. The process combines proven
-thermocatalytic chemistry with electrochemical bioreactor technology in a continuous
-production loop, turning energy and CO₂ into programmable sugars (commodity, specialty,
-niche, and rare). Output is decoupled from land, weather, harvest, and agricultural
-commodity volatility, with consistent quality and predictable pricing.
+Solarferm is a feedstock platform for biomanufacturing. Its first product is
+fermentation-grade sugar, made from carbon and energy rather than from crops. We combine
+industrial carbon, hydrogen, chemistry, and engineered microorganisms in a continuous
+process that converts simple molecules into fermentation-grade feedstock. The platform
+produces programmable sugars across grades (commodity, specialty, niche, and rare).
+Output is decoupled from land, weather, harvest, and agricultural commodity volatility,
+with consistent quality and predictable pricing.
 
 ## Why it matters
-Biomanufacturing is becoming national infrastructure, viewed through the lens of food
-security, supply chain resilience, and sovereign capability. Its binding constraint is
-feedstock supply. Next-generation biomanufacturing needs feedstocks that are abundant,
-predictable, cost-effective, and decoupled from agricultural volatility — the constraint
-Solarferm exists to remove.
+As biomanufacturing scales, demand for reliable, scalable feedstock grows with it. The
+industry has spent a decade optimising microbes; the next decade will be about optimising
+the inputs that feed them. The feedstock that biomanufacturing needs must be abundant,
+predictable, cost-effective, and decoupled from agricultural volatility. That is the
+challenge Solarferm exists to solve.
 
 ## Who it serves
-- Energy companies: an energy-to-product outlet that turns energy and CO₂ into a
-  storable, sellable product and diversifies revenue for the energy transition.
+- Energy companies: carbon and energy monetised as feedstock, sited where both are
+  abundant or under-utilised, rather than competing for contested power; diversifies
+  revenue for the energy transition.
 - Biomanufacturers: fermentation-grade sugar with pricing decoupled from crops, delivered
   continuously from modular plants sited near fermentation capacity.
 - Ingredient makers: programmable sugars, from commodity to niche and rare, with lower
   carbon intensity than agricultural sources.
 
 ## Key points
-- Inputs: carbon dioxide (CO₂) and hydrogen (H₂), plus energy.
-- Energy-source agnostic: deployable on existing infrastructure today, scaling onto
-  next-generation renewables as they reach parity.
-- Secure, onshore, resilient: supply independent of farms, weather, and distant
-  commodity markets.
+- Inputs: carbon dioxide (CO2) and hydrogen (H2), plus energy.
+- Energy-source agnostic: the core conversion is thermochemical, not dependent on cheap
+  electricity. Deployed where carbon and energy are abundant or under-utilised, rather
+  than competing with rising demand from transport and data centres.
+- Decoupled from agriculture: no cropland, harvest cycles, climate risks, or agricultural
+  supply chains.
+- Secure, onshore, resilient: supply independent of farms, weather, and distant commodity
+  markets.
 - Based in New Zealand.
 
 ## Contact
