@@ -225,7 +225,6 @@
     color: var(--text);
   }
   .soundbite p + p { margin-top: 0.7em; }
-  .shift-intro { margin: 14px 0 28px; max-width: 52ch; font-size: 17px; line-height: 1.6; color: var(--text-dim); font-family: var(--body); }
   @media (max-width: 900px) { .shift-grid { grid-template-columns: 1fr; gap: 28px; } }
 
 
@@ -328,13 +327,15 @@
     text-align: center;
   }
   .backers-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px 28px;
     max-width: 880px;
     margin: 0 auto;
   }
   .backers .logo {
+    flex: 0 1 244px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -353,7 +354,8 @@
   .backers .logo:hover img { opacity: 1; }
   @media (max-width: 760px) {
     .backers { padding: 56px 0; }
-    .backers-grid { grid-template-columns: repeat(2, 1fr); gap: 14px 18px; }
+    .backers-grid { gap: 14px 18px; }
+    .backers .logo { flex: 0 1 140px; }
     .backers .logo img { max-width: 150px; }
   }
 
@@ -403,8 +405,8 @@
   <div class="nav-inner">
     <a href="#top"><img class="logo" src="assets/solarferm-logo-white.svg" alt="Solarferm logo" /></a>
     <nav class="nav-links">
-      <a href="#how">Technology</a>
       <a href="#customers">Who we serve</a>
+      <a href="#how">Technology</a>
       <a href="#why">Why it works</a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
     </nav>
@@ -451,10 +453,6 @@
 <section id="shift">
   <div class="wrap">
     <div class="label">The shift</div>
-    <p class="shift-intro">
-      As biomanufacturing scales, demand for reliable, scalable feedstock grows with it.
-      That is the challenge Solarferm exists to solve.
-    </p>
     <blockquote class="soundbite">
       <p>The industry has spent a decade optimising microbes.</p>
       <p>The next decade will be about optimising the inputs that feed them.</p>
@@ -654,7 +652,6 @@
     <div class="backers-group">
       <div class="backers-label">Supported by</div>
       <div class="backers-grid">
-        <a class="logo" href="https://creativehq.co.nz/" target="_blank" rel="noopener"><img src="assets/logos/creativehq.png" alt="CreativeHQ" /></a>
         <a class="logo" href="https://creativehq.co.nz/build-for-founders/aurora-climate-lab/" target="_blank" rel="noopener"><img src="assets/logos/aurora.jpg" alt="Aurora Climate Lab" /></a>
         <a class="logo" href="https://agrifutures.com.au/" target="_blank" rel="noopener"><img src="assets/logos/agrifutures.png" alt="AgriFutures Australia" /></a>
       </div>
@@ -699,29 +696,49 @@
   </div>
 </footer>
 
-<!-- CTA + outbound click tracking (GA4 events) -->
+<!-- Click tracking (GA4 events) -->
 <script>
   (function () {
     if (typeof gtag !== 'function') return;
 
-    // Contact CTAs: any mailto link, and the nav "Get in touch"
+    // Consistent location for any element, used across all events
+    function loc(el) {
+      return el.closest('.hero') ? 'hero'
+           : el.closest('.closing') ? 'closing'
+           : el.closest('.backers') ? 'supporters'
+           : el.closest('footer, .footer') ? 'footer'
+           : el.closest('header, nav') ? 'nav'
+           : 'other';
+    }
+    function text(el) {
+      var t = (el.textContent || '').trim();
+      if (t) return t;
+      var img = el.querySelector('img');
+      return (img && img.alt) || '';
+    }
+
+    // Contact CTAs (mailto + "Get in touch") -> conversion. Keep GA4's generate_lead.
     document.querySelectorAll('a[href^="mailto:"], a[href="#contact"]').forEach(function (el) {
       el.addEventListener('click', function () {
         gtag('event', 'generate_lead', {
-          link_text: (el.textContent || '').trim(),
-          link_location: el.closest('.hero') ? 'hero'
-                        : el.closest('.closing') ? 'closing'
-                        : el.closest('header, nav') ? 'nav' : 'other'
+          link_type: 'email',
+          link_text: text(el),
+          link_location: loc(el),
+          link_url: el.getAttribute('href')
         });
       });
     });
 
-    // Partner / supporter logo outbound clicks
-    document.querySelectorAll('.backers a[href^="http"]').forEach(function (el) {
+    // All other outbound clicks -> one event, sliceable by link_type.
+    document.querySelectorAll('.backers a[href^="http"], a[href*="linkedin.com"]').forEach(function (el) {
       el.addEventListener('click', function () {
-        gtag('event', 'partner_logo_click', {
-          link_url: el.getAttribute('href'),
-          link_text: (el.querySelector('img') && el.querySelector('img').alt) || ''
+        var href = el.getAttribute('href') || '';
+        var type = href.indexOf('linkedin.com') !== -1 ? 'linkedin' : 'partner';
+        gtag('event', 'outbound_click', {
+          link_type: type,
+          link_text: text(el),
+          link_location: loc(el),
+          link_url: href
         });
       });
     });
