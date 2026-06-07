@@ -242,6 +242,17 @@
   /* under the hood */
   .hood-lead { font-size: 16.5px; line-height: 1.65; color: var(--text-dim); max-width: 70ch; }
 
+  /* economics / proof band */
+  #economics .label { display: block; margin-bottom: 16px; }
+  .econ-h { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 48px; }
+  .econ-stats { display: flex; flex-wrap: wrap; gap: 56px 96px; }
+  .econ-stat { min-width: 180px; }
+  .econ-num { font-family: var(--display); font-weight: 700; font-size: clamp(64px, 9vw, 104px); line-height: 0.95; letter-spacing: -0.03em; color: var(--yellow); }
+  .econ-stat-label { font-family: var(--display); font-weight: 600; font-size: clamp(18px, 2vw, 24px); color: var(--text); margin-top: 6px; }
+  .econ-stat-note { font-size: 14px; color: var(--text-dim); margin-top: 4px; }
+  @media (max-width: 600px) { .econ-stats { gap: 36px 48px; } }
+  .econ-close { font-family: var(--display); font-weight: 600; font-size: clamp(18px, 2vw, 22px); color: var(--text); margin: 48px 0 0; max-width: 40ch; }
+
   /* four forces */
   .forces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .force {
@@ -480,6 +491,32 @@
         <div class="wp"><span class="wp-y">Just</span> consistent quality and predictable pricing, at industrial scale.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ECONOMICS / PROOF BAND -->
+<section id="economics">
+  <div class="wrap">
+    <div class="label">The payoff</div>
+    <h2 class="econ-h">Breakthrough technology,<br />breakaway economics.</h2>
+    <div class="econ-stats">
+      <div class="econ-stat">
+        <div class="econ-num">50&times;</div>
+        <div class="econ-stat-label">faster production</div>
+        <div class="econ-stat-note">than growing crops</div>
+      </div>
+      <div class="econ-stat">
+        <div class="econ-num">20%</div>
+        <div class="econ-stat-label">lower cost</div>
+        <div class="econ-stat-note">than conventional feedstock</div>
+      </div>
+      <div class="econ-stat">
+        <div class="econ-num">50%</div>
+        <div class="econ-stat-label">lower carbon</div>
+        <div class="econ-stat-note">than conventional sugar</div>
+      </div>
+    </div>
+    <p class="econ-close">The unit economics stack up. Now we're building to prove it.</p>
   </div>
 </section>
 
