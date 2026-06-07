@@ -229,15 +229,19 @@
 
 
   /* what we do */
-  .what-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 44px; align-items: start; }
-  .what-firstproduct { font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--yellow); margin-top: 14px; }
-  .what-lead { font-size: 18px; line-height: 1.65; color: var(--text); }
-  .what-points { display: flex; flex-direction: column; gap: 14px; }
-  .what-points .wp { font-size: 16px; line-height: 1.5; color: var(--text-dim); padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-  .what-points .wp:last-child { border-bottom: none; }
-  .what-points .wp-x { font-family: var(--display); font-weight: 700; color: var(--text); margin-right: 6px; }
-  .what-points .wp-y { font-family: var(--display); font-weight: 700; color: var(--yellow); margin-right: 6px; }
-  @media (max-width: 900px) { .what-grid { grid-template-columns: 1fr; gap: 26px; } }
+  .what-lead { font-size: 18px; line-height: 1.65; color: var(--text); max-width: 72ch; }
+  .model-split { display: grid; grid-template-columns: 1fr 1fr; margin-top: 38px; }
+  .model-half { padding: 2px 0 2px 44px; }
+  .model-half:first-child { padding-left: 0; padding-right: 44px; }
+  .model-half:last-child { border-left: 1px solid var(--line-strong); }
+  .model-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px; }
+  .model-half h3 { font-family: var(--display); font-size: 23px; font-weight: 600; line-height: 1.15; margin-bottom: 10px; }
+  .model-half p { font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+  @media (max-width: 760px) {
+    .model-split { grid-template-columns: 1fr; gap: 28px; }
+    .model-half { padding: 0; }
+    .model-half:last-child { border-left: none; border-top: 1px solid var(--line-strong); padding-top: 28px; }
+  }
 
   /* under the hood */
   .hood-lead { font-size: 16.5px; line-height: 1.65; color: var(--text-dim); max-width: 70ch; }
@@ -479,16 +483,21 @@
       <div class="label">What we do</div>
       <h2>A new feedstock platform for biomanufacturing.</h2>
     </div>
-    <div class="what-grid">
-      <p class="what-lead">
-        A single platform for programmable sugars, from commodity volumes to the
-        specialty, niche, and rare sugars that are hard to source any other way. We convert
-        abundant inputs into feedstock for biomanufacturing.
-      </p>
-      <div class="what-points">
-        <div class="wp"><span class="wp-x">No</span> dependence on traditional agriculture.</div>
-        <div class="wp"><span class="wp-x">No</span> exposure to climate volatility.</div>
-        <div class="wp"><span class="wp-y">Just</span> consistent quality and predictable pricing, at industrial scale.</div>
+    <p class="what-lead">
+      A single platform for programmable sugars. We produce it, and license the
+      technology to produce it anywhere: fermentation-grade sugar from carbon at our
+      own sites, and the programmable biology for partners to produce it on theirs.
+    </p>
+    <div class="model-split">
+      <div class="model-half">
+        <div class="model-k">We provide</div>
+        <h3>The biology</h3>
+        <p>Engineered strains and the control system.</p>
+      </div>
+      <div class="model-half">
+        <div class="model-k">Partners can own and operate</div>
+        <h3>The hardware</h3>
+        <p>The reactors, feed systems, and industrial sites.</p>
       </div>
     </div>
   </div>
