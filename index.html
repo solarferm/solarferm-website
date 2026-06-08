@@ -275,25 +275,7 @@
   .force .role { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 12px; }
   .force p { font-size: 14px; color: var(--text-dim); line-height: 1.55; }
 
-  /* customers */
-  .customers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .cust {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px;
-    display: flex; flex-direction: column; transition: border-color .2s;
-  }
-  .cust:hover { border-color: var(--yellow-line); }
-  .cust .for { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; }
-  .cust h3 { font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; margin-bottom: 14px; }
-  .cust > p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 18px; }
-  .cust ul { list-style: none; margin-top: 0; display: flex; flex-direction: column; gap: 10px; }
-  .cust li { font-size: 13.5px; color: var(--text); line-height: 1.5; padding-left: 20px; position: relative; }
-  .cust li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
-  /* Align eyebrow / headline / bullets across all three cards regardless of font metrics */
-  @supports (grid-template-rows: subgrid) {
-    .customers { grid-template-rows: auto auto auto; }
-    .cust { grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 0; }
-    .cust h3 { margin-bottom: 0; padding-bottom: 14px; }
-  }
+  /* customers use the .model-split divider layout (see "what we do") */
 
   /* resilient grid */
   .resilient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -387,7 +369,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 28px; }
     .hero-orb { order: -1; justify-content: flex-start; }
     .hero-orb img { max-width: 240px; }
-    .forces, .customers { grid-template-columns: 1fr; }
+    .forces { grid-template-columns: 1fr; }
     /* Mobile: compress each force card — dot + title on one line */
     .force { padding: 20px 22px; display: grid; grid-template-columns: auto 1fr; column-gap: 11px; align-items: center; }
     .force .dot { margin-bottom: 0; grid-row: 1; }
@@ -520,27 +502,19 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="label">Who we serve</div>
-      <h2>One feedstock, built for two kinds of customer.</h2>
+      <h2>One platform, built for two kinds of customer.</h2>
       <p>Whether you ferment the sugar or formulate the product, Solarferm fits into what you already do.</p>
     </div>
-    <div class="customers">
-      <div class="cust">
-        <div class="for">For biomanufacturers</div>
-        <h3>Feedstock that doesn't ride the harvest</h3>
-        <ul>
-          <li>Fermentation-grade output, ready to feed your strains</li>
-          <li>Pricing insulated from agricultural commodity volatility</li>
-          <li>Site plants next to your fermentation capacity</li>
-        </ul>
+    <div class="model-split" style="margin-top:0">
+      <div class="model-half">
+        <div class="model-k">For biomanufacturers</div>
+        <h3>Feedstock supply that scales with your fermentation capacity.</h3>
+        <p>Site production where you need it, with long-term supply designed for industrial fermentation.</p>
       </div>
-      <div class="cust">
-        <div class="for">For ingredient makers</div>
-        <h3>Programmable sugars, from commodity to niche and rare</h3>
-        <ul>
-          <li>Programmable output: commodity, specialty, niche, and rare sugars</li>
-          <li>Lower carbon intensity than agricultural sources</li>
-          <li>Tune the molecule to your formulation</li>
-        </ul>
+      <div class="model-half">
+        <div class="model-k">For ingredient makers</div>
+        <h3>Programmable sugars, from commodity to niche and rare.</h3>
+        <p>Tune the molecule to your formulation.</p>
       </div>
     </div>
   </div>
@@ -552,7 +526,7 @@
     <div class="sec-head" style="max-width:64ch">
       <div class="label">What it feeds</div>
       <h2>The bioeconomy runs on sugar.</h2>
-      <p>From materials and chemicals to fragrances and pharmaceutical ingredients,
+      <p>From food and ingredients to materials, chemicals, fragrances, and pharmaceuticals,
       biomanufacturing depends on the same fundamental input: feedstock.</p>
       <p class="feeds-close">Solarferm supplies it, at scale.</p>
     </div>
