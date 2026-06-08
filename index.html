@@ -293,15 +293,6 @@
     .cust h3 { margin-bottom: 0; padding-bottom: 14px; }
   }
 
-  /* features */
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-  .feat { background: var(--black); padding: 28px 26px; transition: background .2s; }
-  .feat:hover { background: var(--panel); }
-  .feat .n { font-family: var(--mono); font-size: 11px; color: var(--yellow); margin-bottom: 14px; }
-  .feat h4 { font-family: var(--display); font-size: 16px; font-weight: 600; margin-bottom: 7px; }
-  .feat p { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
-
-
   /* resilient grid */
   .resilient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .res { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px 22px; transition: border-color .2s; }
@@ -394,13 +385,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 28px; }
     .hero-orb { order: -1; justify-content: flex-start; }
     .hero-orb img { max-width: 240px; }
-    .forces, .customers, .features { grid-template-columns: 1fr; }
-    .features { grid-template-columns: 1fr; }
-    /* Mobile: compress each feature card — number + title on one line */
-    .feat { padding: 20px 22px; }
-    .feat .n { display: inline; margin-bottom: 0; margin-right: 10px; }
-    .feat h4 { display: inline; }
-    .feat h4 + p { margin-top: 6px; }
+    .forces, .customers { grid-template-columns: 1fr; }
     /* Mobile: compress each force card — dot + title on one line */
     .force { padding: 20px 22px; display: grid; grid-template-columns: auto 1fr; column-gap: 11px; align-items: center; }
     .force .dot { margin-bottom: 0; grid-row: 1; }
@@ -636,14 +621,6 @@
     <div class="sec-head">
       <div class="label">Why it works</div>
       <h2>Engineered for industrial reality.</h2>
-    </div>
-    <div class="features">
-      <div class="feat"><div class="n">01</div><h4>Commodity-scale economics</h4><p>Built on industrial inputs and infrastructure already deployed at global scale.</p></div>
-      <div class="feat"><div class="n">02</div><h4>Decoupled from agriculture</h4><p>No cropland, harvest cycles, climate risks, or agricultural supply chains.</p></div>
-      <div class="feat"><div class="n">03</div><h4>Continuous manufacturing</h4><p>Production measured in days, bankable long-term supply contracts.</p></div>
-      <div class="feat"><div class="n">04</div><h4>Infrastructure compatible</h4><p>Deployable alongside existing energy, carbon, and manufacturing assets.</p></div>
-      <div class="feat"><div class="n">05</div><h4>Designed for fermentation</h4><p>Outputs integrate with existing fermentation and downstream systems.</p></div>
-      <div class="feat"><div class="n">06</div><h4>Scale through replication</h4><p>Modular facilities add capacity incrementally where demand exists.</p></div>
     </div>
   </div>
 </section>
