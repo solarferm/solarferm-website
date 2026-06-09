@@ -371,7 +371,7 @@
 
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-    .hero-orb { order: -1; align-items: flex-start; }
+    .hero-orb { align-items: flex-start; }
     .hero-orb img { max-width: 240px; }
     .stage { max-width: 320px; }
     .forces { grid-template-columns: 1fr; }
@@ -387,10 +387,6 @@
     .equation .term .big { font-size: 17px; }
   }
 </style>
-<!-- Three.js for the hero animation (no build step; loaded as an ES module) -->
-<script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
-</script>
 </head>
 <body>
 
@@ -750,12 +746,16 @@
 
 <!-- Hero animation: glucose assembling from carbon + energy. Cool spectrum only (no yellow). -->
 <script type="module">
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
 const canvas = document.getElementById('gl');
 if (canvas) {
 const stage  = canvas.parentElement;
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FULL_MOTION_ALWAYS = false;   // set true to ignore the OS "reduce motion" setting entirely
+// "gentle" = honour reduce-motion but keep a calmer animation (no camera dolly, no depth zoom,
+//            fewer/slower particles, fades in place) instead of freezing on a single frame.
+const gentle = prefersReduce && !FULL_MOTION_ALWAYS;
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false });
 renderer.setClearColor(0x0f0f0e, 1);
@@ -859,16 +859,19 @@ bond('C3','C4','fuse', FUSE_START);
 bond('O','C1', 'fold', MORPH_START);
 
 // ---- directional inflow molecules ----
+const FLOW_V  = gentle ? 0.6 : 1;     // slower drift when honouring reduce-motion
+const FLOW_OP = gentle ? 0.45 : 0.8;  // quieter particles when honouring reduce-motion
 const flow = [];
 function resetFlow(f){
   const ang = Math.random()*Math.PI*2, r0 = 7 + Math.random()*2;
   f.sx = Math.cos(ang)*r0; f.sy = Math.sin(ang)*r0;
   const ta = (-90 + (Math.floor(Math.random()*6))*60) * Math.PI/180;
   f.tx = Math.cos(ta)*RING_R*0.7; f.ty = Math.sin(ta)*RING_R*0.7;
-  f.u = 0; f.v = 0.10 + Math.random()*0.10;
+  f.u = 0; f.v = (0.10 + Math.random()*0.10) * FLOW_V;
 }
-if(!reduce){
-  for(let i=0;i<16;i++){
+{
+  const N = gentle ? 7 : 16;
+  for(let i=0;i<N;i++){
     const sp = nodeSprite(Math.random() < 0.4 ? O_COL : C_COL, 0.16); flowGroup.add(sp);
     const f = { sp }; resetFlow(f); f.u = Math.random(); flow.push(f);
   }
@@ -879,7 +882,7 @@ const clamp01 = x => x<0?0:(x>1?1:x);
 const smooth  = x => { x=clamp01(x); return x*x*(3-2*x); };
 const lerp = (a,b,t) => a+(b-a)*t;
 
-const LOOP = 9; // seconds
+const LOOP = gentle ? 12 : 9; // seconds
 const clock = new THREE.Clock();
 let last = 0;
 
@@ -887,8 +890,12 @@ function setState(cn, dt, t){
   // once formed, the whole ring drifts back into the distance and fades, then the loop restarts
   const recede = smooth((cn - 0.47)/0.16);
   const diss = 1 - recede;
-  net.position.z = -recede * 5.0;
-  const ns = 1 - 0.22*recede; net.scale.set(ns, ns, ns);
+  if(gentle){
+    net.position.z = 0; net.scale.set(1, 1, 1);  // fade in place, no depth motion
+  } else {
+    net.position.z = -recede * 5.0;
+    const ns = 1 - 0.22*recede; net.scale.set(ns, ns, ns);
+  }
   // two stages: the two halves fuse (f), then the open chain folds into the ring (m)
   const f = smooth((cn - FUSE_START)/FUSE_DUR);     // 0 = halves apart, 1 = joined chain
   const m = smooth((cn - MORPH_START)/MORPH_DUR);   // 0 = open chain, 1 = ring
@@ -915,12 +922,16 @@ function setState(cn, dt, t){
     b.mat.opacity = 0.6 * vis * diss;
   }
 
-  // camera: a gentle push-in as it assembles, easing back out as it fades
-  const prog = smooth((cn - 0.04)/0.62);
-  let z = lerp(7.1, 6.4, prog);
-  if(cn > 0.86) z = lerp(z, 7.1, smooth((cn - 0.86)/0.12));
-  camera.position.z = z;
-  net.rotation.z = 0.03*Math.sin(t*0.12);
+  // camera: a gentle push-in as it assembles, easing back out as it fades (skipped in gentle mode)
+  if(gentle){
+    camera.position.z = 6.7;
+  } else {
+    const prog = smooth((cn - 0.04)/0.62);
+    let z = lerp(7.1, 6.4, prog);
+    if(cn > 0.86) z = lerp(z, 7.1, smooth((cn - 0.86)/0.12));
+    camera.position.z = z;
+    net.rotation.z = 0.03*Math.sin(t*0.12);
+  }
 
   // inflow
   const intensity = 0.32 + 0.68*smooth((0.20 - cn)/0.20); // strong early, gentle trickle after
@@ -930,7 +941,7 @@ function setState(cn, dt, t){
     const e = smooth(f.u);
     f.sp.position.set(lerp(f.sx, f.tx, e), lerp(f.sy, f.ty, e), 0);
     const fade = smooth(f.u/0.14) * (1 - smooth((f.u-0.66)/0.34));
-    f.sp.material.opacity = fade * intensity * 0.8;   // independent of the molecule's fade
+    f.sp.material.opacity = fade * intensity * FLOW_OP;   // independent of the molecule's fade
   }
 }
 
@@ -944,19 +955,14 @@ function resize(){
 let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(resize, 150); });
 resize();
 
-if(reduce){
-  setState(0.47, 0, 0);   // just-formed ring, before it recedes
+(function tick(){
+  const t = clock.getElapsedTime();
+  const dt = Math.min(0.05, t - last); last = t;
+  const cn = (t % LOOP) / LOOP;
+  setState(cn, dt, t);
   renderer.render(scene, camera);
-} else {
-  (function tick(){
-    const t = clock.getElapsedTime();
-    const dt = Math.min(0.05, t - last); last = t;
-    const cn = (t % LOOP) / LOOP;
-    setState(cn, dt, t);
-    renderer.render(scene, camera);
-    requestAnimationFrame(tick);
-  })();
-}
+  requestAnimationFrame(tick);
+})();
 }
 </script>
 </body>
