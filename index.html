@@ -427,7 +427,7 @@
     </div>
     <div class="hero-orb">
       <div class="stage"><canvas id="gl"></canvas></div>
-      <div class="stage-cap">Inputs &rarr; conversion &rarr; scale</div>
+      <div class="stage-cap">Inputs &rarr; conversion &rarr; product</div>
     </div>
   </div>
 
@@ -802,7 +802,7 @@ const C_COL  = 0x00e0f0;                      // carbon (all the same)
 const O_COL  = 0x20f0b0;                      // oxygen / hydroxyl groups
 const ATOM_DUR    = 0.06;                     // per-atom fade-in
 const FUSE_START  = 0.22, FUSE_DUR  = 0.08;   // two halves -> one chain
-const MORPH_START = 0.30, MORPH_DUR = 0.14;   // chain -> ring fold (starts as the fuse ends)
+const MORPH_START = 0.33, MORPH_DUR = 0.14;   // chain -> ring fold (a short beat after the halves join)
 
 const D2R = Math.PI/180;
 const rp  = (deg, rad) => [Math.cos(deg*D2R)*rad, Math.sin(deg*D2R)*rad];
@@ -885,7 +885,7 @@ let last = 0;
 
 function setState(cn, dt, t){
   // once formed, the whole ring drifts back into the distance and fades, then the loop restarts
-  const recede = smooth((cn - 0.45)/0.16);
+  const recede = smooth((cn - 0.47)/0.16);
   const diss = 1 - recede;
   net.position.z = -recede * 5.0;
   const ns = 1 - 0.22*recede; net.scale.set(ns, ns, ns);
@@ -945,7 +945,7 @@ let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTime
 resize();
 
 if(reduce){
-  setState(0.44, 0, 0);   // just-formed ring, before it recedes
+  setState(0.47, 0, 0);   // just-formed ring, before it recedes
   renderer.render(scene, camera);
 } else {
   (function tick(){
