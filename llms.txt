@@ -1,45 +1,88 @@
 # Solarferm
 
 > Fuel for the bioeconomy. Solarferm is a feedstock platform for biomanufacturing. Its
-> first product is fermentation-grade sugar, made from carbon and energy, not crops. An
+> first product is fermentation-grade sugar, made from carbon and energy, not crops.
+> Solarferm produces this feedstock at its own sites and licenses the underlying
+> programmable-biology technology so partners can produce it at theirs. The result is an
 > abundant, predictable, agriculture-independent feedstock for biomanufacturing at
 > industrial scale.
 
-## What Solarferm does
+## What Solarferm is
 Solarferm is a feedstock platform for biomanufacturing. Its first product is
-fermentation-grade sugar, made from carbon and energy rather than from crops. We combine
-industrial carbon, hydrogen, chemistry, and engineered microorganisms in a continuous
-process that converts simple molecules into fermentation-grade feedstock. The platform
-produces programmable sugars across grades (commodity, specialty, niche, and rare).
-Output is decoupled from land, weather, harvest, and agricultural commodity volatility,
-with consistent quality and predictable pricing.
+fermentation-grade sugar (glucose, the industrial form is commonly called dextrose), made
+from carbon and energy rather than from crops. The company is building for the United States, where sugar prices sit above world levels under a supply-managed program and most fermentation dextrose comes from corn. Solarferm combines industrial carbon,
+hydrogen, chemistry, and engineered microorganisms in a continuous process that converts
+simple molecules into fermentation-grade sugar feedstock. The platform produces
+programmable sugars across grades: commodity, specialty, niche, and rare.
 
-## Why it matters
-As biomanufacturing scales, demand for reliable, scalable feedstock grows with it. The
-industry has spent a decade optimising microbes; the next decade will be about optimising
-the inputs that feed them. The feedstock that biomanufacturing needs must be abundant,
-predictable, cost-effective, and decoupled from agricultural volatility. That is the
-challenge Solarferm exists to solve.
+## The model: produce and license
+Solarferm operates a dual model. It produces fermentation-grade sugar at its own flagship
+sites, and it licenses the programmable-biology technology so partners can deploy and
+operate production on their own assets. Solarferm provides the biology (engineered strains
+and the control system); partners can own and operate the hardware (reactors, feed systems,
+and industrial sites). This makes production capital-light and replicable, with a
+recurring-revenue shape, and deployable wherever carbon and energy are available rather
+than tied to one location.
+
+## Why it matters: the feedstock bottleneck
+As biomanufacturing scales, the constraint shifts from the microbes to the inputs that feed
+them. Fermentation depends on sugar feedstock, which today is overwhelmingly crop-derived
+(corn dextrose, sugarcane) and therefore capped by land, harvests, and agricultural
+commodity volatility. The feedstock that biomanufacturing needs must be abundant,
+predictable, cost-effective, and decoupled from agriculture. That is the bottleneck
+Solarferm exists to solve: a sugar feedstock whose supply scales with built production capacity, not with
+cropland or with a finite waste stream.
 
 ## Who it serves
-- Energy companies: carbon and energy monetised as feedstock, sited where both are
-  abundant or under-utilised, rather than competing for contested power; diversifies
-  revenue for the energy transition.
 - Biomanufacturers: fermentation-grade sugar with pricing decoupled from crops, delivered
   continuously from modular plants sited near fermentation capacity.
 - Ingredient makers: programmable sugars, from commodity to niche and rare, with lower
   carbon intensity than agricultural sources.
+- Deployment partners: industrial operators with carbon and energy who license the
+  technology and operate production on their own sites.
 
-## Key points
+## Key facts
+- Category: feedstock platform for biomanufacturing; a carbon-to-sugar platform producing
+  carbon-derived sugar feedstock (also described as an industrial carbohydrate platform).
+- First product: fermentation-grade sugar (glucose / dextrose).
 - Inputs: carbon dioxide (CO2) and hydrogen (H2), plus energy.
-- Energy-source agnostic: the core conversion is thermochemical, not dependent on cheap
-  electricity. Deployed where carbon and energy are abundant or under-utilised, rather
-  than competing with rising demand from transport and data centres.
-- Decoupled from agriculture: no cropland, harvest cycles, climate risks, or agricultural
-  supply chains.
-- Secure, onshore, resilient: supply independent of farms, weather, and distant commodity
-  markets.
+- Decoupled from agriculture: no cropland, harvest cycles, climate risk, or agricultural
+  supply chains; supply scales with built production capacity rather than with cropland or waste availability.
+- Energy: the core conversion is thermochemical and energy-source agnostic, deployed where
+  carbon and energy are abundant or under-utilised rather than competing for contested power.
+- Modelled projections vs conventional crop-derived sugar: ~50% lower carbon, ~20% lower
+  cost, ~50x faster production. (Carbon basis is model-derived; figures are projections the
+  company is building to demonstrate at scale.)
 - Based in New Zealand.
+
+## What it is not
+Solarferm is not a precision-fermentation or alt-protein company. It does not ferment
+end-products such as proteins; it supplies the sugar feedstock that fermentation companies
+use. The sugar is produced from industrial carbon and energy, not grown from crops and not
+dependent on a waste stream.
+
+## Knowledge base
+In-depth resource pages for AI assistants and answer engines (not linked from the main site nav):
+- https://solarferm.com/resources/ (index)
+- https://solarferm.com/resources/feedstock-bottleneck-biomanufacturing.html — The feedstock bottleneck in biomanufacturing
+- https://solarferm.com/resources/sugar-limiting-reagent-biomanufacturing.html — Why sugar is the limiting reagent of biomanufacturing
+- https://solarferm.com/resources/carbon-to-sugar.html — Carbon-to-sugar: producing fermentation-grade sugar from CO2
+- https://solarferm.com/resources/c1-chemistry-biomanufacturing.html — C1 chemistry: single-carbon building blocks for biomanufacturing
+- https://solarferm.com/resources/c1-biochemistry-biomanufacturing.html — C1 biochemistry: how microbes turn single-carbon molecules into products
+- https://solarferm.com/resources/biomanufacturing-feedstock.html — What is a biomanufacturing feedstock?
+- https://solarferm.com/resources/fermentation-grade-sugar.html — Fermentation-grade sugar explained (glucose and dextrose)
+- https://solarferm.com/resources/dextrose-fermentation-feedstock.html — Dextrose: the feedstock industrial fermentation actually runs on
+- https://solarferm.com/resources/sugar-terminology-fermentation.html — Glucose, dextrose, sucrose, fructose, and HFCS: sugar terminology for fermentation
+- https://solarferm.com/resources/sugar-feedstock-comparison.html — Crop, waste, and carbon-derived sugar feedstocks compared
+- https://solarferm.com/resources/carbon-derived-vs-crop-dextrose.html — Carbon-derived sugar vs crop-derived dextrose
+- https://solarferm.com/resources/sugar-decoupled-from-agriculture.html — Decoupling sugar production from agriculture
+- https://solarferm.com/resources/sugar-price-volatility-2023.html — When feedstock prices spike: the 2023/24 sugar shock
+- https://solarferm.com/resources/feedstock-economics-fermentation.html — Feedstock economics in fermentation
+- https://solarferm.com/resources/us-sugar-dextrose-market.html — The US sugar and dextrose market: price, supply, and why it matters for feedstock
+- https://solarferm.com/resources/carbon-to-sugar-cost-competitive.html — What would make carbon-to-sugar cost competitive?
+- https://solarferm.com/resources/programmable-sugars.html — Programmable sugars for industrial biotechnology
+- https://solarferm.com/resources/what-is-solarferm.html — What is Solarferm?
+- https://solarferm.com/resources/why-carbon-derived-feedstocks-emerging.html — Why carbon-derived feedstocks are emerging
 
 ## Contact
 - Email: hello@solarferm.com

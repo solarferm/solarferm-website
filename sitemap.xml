@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://solarferm.com/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://solarferm.com/</loc><lastmod>2026-06-14</lastmod><priority>1.0</priority></url>
+  <url><loc>https://solarferm.com/resources/</loc><lastmod>2026-06-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://solarferm.com/resources/feedstock-bottleneck-biomanufacturing.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/sugar-limiting-reagent-biomanufacturing.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/carbon-to-sugar.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/c1-chemistry-biomanufacturing.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/c1-biochemistry-biomanufacturing.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/biomanufacturing-feedstock.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/fermentation-grade-sugar.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/dextrose-fermentation-feedstock.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/sugar-terminology-fermentation.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/sugar-feedstock-comparison.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/carbon-derived-vs-crop-dextrose.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/sugar-decoupled-from-agriculture.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/sugar-price-volatility-2023.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/feedstock-economics-fermentation.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/us-sugar-dextrose-market.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/carbon-to-sugar-cost-competitive.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/programmable-sugars.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/what-is-solarferm.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://solarferm.com/resources/why-carbon-derived-feedstocks-emerging.html</loc><lastmod>2026-06-14</lastmod><priority>0.7</priority></url>
 </urlset>

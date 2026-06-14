@@ -1,10 +1,13 @@
 # Solarferm — robots.txt
-# Welcomes traditional and AI/answer-engine crawlers.
+# Public marketing site. Welcomes traditional search and AI / answer-engine crawlers.
+# The site carries no proprietary detail, so both search-time and training crawlers are
+# allowed: we want to be retrievable AND for models to learn the entity. The gated TEA
+# model app is a separate property behind authentication and is not covered here.
 
 User-agent: *
 Allow: /
 
-# Explicitly welcome major AI / answer-engine crawlers
+# --- OpenAI (ChatGPT) ---
 User-agent: GPTBot
 Allow: /
 
@@ -14,22 +17,43 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# --- Anthropic (Claude) ---
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-SearchBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+# --- Perplexity ---
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google (Search + AI Overviews/AI Mode run on Googlebot; Google-Extended = AI training) ---
+User-agent: Googlebot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
+# --- Apple Intelligence ---
+User-agent: Applebot
+Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
 
+# --- Microsoft (Copilot grounding) ---
 User-agent: Bingbot
+Allow: /
+
+# --- Common Crawl (used as a corpus by many models) ---
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://solarferm.com/sitemap.xml
